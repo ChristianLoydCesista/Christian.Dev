@@ -1,67 +1,81 @@
-# Christian — Portfolio (Live Refined Build)
+# Christian Loyd Cesista — Software Developer Portfolio
 
-This folder is ready for static hosting. There is no build step and no framework dependency.
+A responsive personal portfolio website showcasing my software development projects, technical capabilities, development process, and professional journey.
 
-## 1. Add your real profile photo
+The portfolio is designed around a clean editorial-style interface with strong typography, generous spacing, responsive layouts, and light/dark themes. It is built as a lightweight static website with no framework or build process required.
 
-Place your photo beside `index.html` and name it exactly:
+## About the Portfolio
 
-`profile-picture2.png`
+This website presents my work as a software developer focused on building practical web applications and information systems for real-world problems.
 
-If the photo is missing, the page shows a clean `CL` fallback instead of a broken image.
+It highlights:
 
-## 2. Configure your links
+- Selected software projects
+- Full-stack web development capabilities
+- Backend, database, and frontend technologies
+- My development process
+- Education and project journey
+- Contact and professional links
 
-Open `index.html`, search for `const PORTFOLIO =`, and fill in only the links you have:
+## Featured Projects
 
-```js
-const PORTFOLIO = {
-  github: "https://github.com/YOUR_USERNAME",
-  linkedin: "https://www.linkedin.com/in/YOUR_PROFILE",
-  email: "you@example.com",
-  resume: "resume.pdf",
-  projects: {
-    bcis: "",
-    projectManager: "",
-    inventory: ""
-  }
-};
-```
+### Barangay Community Intelligence System
 
-Blank values automatically hide their buttons, so the live site never shows dead `#` links.
+A community intelligence and citizen-service platform designed to support household information management, administrative workflows, assessments, analytics, document services, and community-level decision support.
 
-If you use `resume.pdf`, put the PDF beside `index.html`.
+**Technologies:** PHP, MySQL/MariaDB, JavaScript, AJAX, Bootstrap, Dompdf
 
-## 3. Recommended deployment — GitHub Pages
+### Personal Project Manager
 
-1. Create or open a GitHub repository for the portfolio.
-2. Upload the contents of this folder to the repository root.
-3. Make sure the homepage file is named `index.html`.
-4. In the repository, open **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select your main branch and `/(root)`, then save.
-7. GitHub will publish the site and show its public URL in the Pages settings.
+A mobile-first project and task management application for organizing projects, monitoring task status, tracking progress, and presenting productivity information through a simple dashboard.
 
-## 4. Fast alternative — Netlify Drop
+**Technologies:** PHP, MySQL, JavaScript
 
-You can drag this entire folder into Netlify's deploy dropzone to publish it as a static site.
+### Inventory Monitoring System
 
-## Production improvements included
+A web-based inventory monitoring system for tracking products, stock levels, warehouse transactions, and inventory-related information.
 
-- Real mobile viewport (`width=device-width`)
-- Clean consolidated CSS instead of stacked override blocks
-- Responsive hero, selected work, project cards, skills, journey, and contact sections
-- Dark/light mode with system-theme fallback
-- Accessible mobile navigation and keyboard focus states
-- Reduced-motion support
-- Scroll reveal and active navigation state
-- SEO/social metadata and Person structured data
-- Dynamic year
-- 404 page
-- Favicon
-- Broken-link prevention through a small configuration object
-- Graceful profile-photo fallback
+**Technologies:** PHP, MySQL, JavaScript
 
-## Before sharing publicly
+## Technical Stack
 
-Replace mock project visuals with real screenshots when available. The current embedded visuals are presentation mockups inherited from the prototype.
+### Application Development
+
+- PHP
+- MVC architecture
+- AJAX
+- Authentication and authorization workflows
+- REST-style application workflows
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+- Responsive web design
+- Reusable UI components
+
+### Data and Database
+
+- MySQL
+- MariaDB
+- SQL
+- Relational database design
+- Data relationships and structured application data
+
+### Tools and Technologies
+
+- Git
+- GitHub
+- Composer
+- Visual Studio Code
+- Dompdf
+- XAMPP
+
+### Currently Exploring
+
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
