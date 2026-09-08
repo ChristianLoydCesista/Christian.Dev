@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Christian Loyd Cesista — software developer building practical web applications, information systems, and data-driven tools." />
+  <meta name="theme-color" content="#f7f7f4" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Christian — Software Developer" />
+  <meta property="og:description" content="Practical software for real-world problems. Explore selected systems, capabilities, and development work." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Christian — Software Developer</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <style>
+    :root {
+      --bg: #f7f7f4;
+      --surface: #fbfbf8;
+      --surface-2: #efefea;
+      --text: #111111;
+      --text-soft: #4d4d49;
+      --muted: #777772;
+      --border: #d9d9d3;
+      --accent: #1f5eff;
+      --accent-soft: #e9efff;
+      --header: rgba(247,247,244,.90);
+      --shadow: 0 22px 60px rgba(17,17,17,.07);
+      --container: 1240px;
+      --section-y: clamp(5.5rem, 9vw, 9rem);
+      --ease: cubic-bezier(.2,.75,.25,1);
+      color-scheme: light;
+    }
+    html[data-theme="dark"] {
+      --bg: #0d0d0d;
+      --surface: #111111;
+      --surface-2: #171717;
+      --text: #f1f1ed;
+      --text-soft: #b8b8b0;
+      --muted: #85857d;
+      --border: #2b2b29;
+      --accent: #7ba4ff;
+      --accent-soft: rgba(123,164,255,.12);
+      --header: rgba(13,13,13,.90);
+      --shadow: 0 26px 70px rgba(0,0,0,.30);
+      color-scheme: dark;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65;letter-spacing:-.008em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button,a{-webkit-tap-highlight-color:transparent}
+    :focus-visible{outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:4px}
+    .skip-link{position:fixed;left:1rem;top:-5rem;z-index:999;background:var(--text);color:var(--bg);padding:.7rem 1rem;transition:top .2s}
+    .skip-link:focus{top:1rem}
+    .container{width:min(var(--container),calc(100% - 5rem));margin-inline:auto}
+    .section{padding:var(--section-y) 0}
+    .eyebrow{display:inline-flex;align-items:center;gap:.75rem;margin:0 0 1.35rem;color:var(--accent);font-size:.7rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:42px;height:1px;background:currentColor}
+    .section-title{margin:0;max-width:850px;font-size:clamp(2.6rem,4.5vw,4.5rem);line-height:1.02;letter-spacing:-.058em;text-wrap:balance}
+    .section-copy{max-width:700px;margin:1.4rem 0 0;color:var(--text-soft);font-size:1.05rem;line-height:1.8}
+    .muted{color:var(--muted)}
+
+    .site-header{position:sticky;top:0;z-index:60;background:var(--header);backdrop-filter:blur(18px);border-bottom:1px solid color-mix(in srgb,var(--border) 80%,transparent)}
+    .nav{min-height:84px;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+    .brand{font-size:1.2rem;font-weight:850;letter-spacing:-.045em}
+    .brand span{color:var(--accent)}
+    .nav-links,.nav-actions{display:flex;align-items:center}
+    .nav-links{gap:2.4rem;color:var(--text-soft);font-size:.9rem}
+    .nav-links a{position:relative;padding:.5rem 0}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:.2rem;width:100%;height:1px;background:var(--text);transform:scaleX(0);transform-origin:right;transition:transform .25s var(--ease)}
+    .nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1);transform-origin:left}
+    .nav-actions{gap:.65rem}
+    .icon-btn,.menu-btn{width:46px;height:46px;border:1px solid var(--border);background:var(--surface);color:var(--text);display:inline-grid;place-items:center;cursor:pointer;transition:background .2s,border-color .2s}
+    .icon-btn:hover,.menu-btn:hover{background:var(--surface-2)}
+    .icon{width:18px;height:18px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+    .btn{min-height:48px;padding:.78rem 1.2rem;border:1px solid var(--border);background:var(--surface);color:var(--text);display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:750;font-size:.9rem;transition:background .2s,border-color .2s,color .2s}
+    .btn:hover{background:var(--surface-2)}
+    .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+    .btn-primary:hover{background:color-mix(in srgb,var(--accent) 88%,#000);border-color:color-mix(in srgb,var(--accent) 88%,#000)}
+    html[data-theme="dark"] .btn-primary{color:#08111f}
+    .menu-btn{display:none;font-size:1.3rem;line-height:1}
+    .mobile-menu{display:none;padding:1rem 0 1.35rem;border-top:1px solid var(--border)}
+    .mobile-menu.open{display:grid}
+    .mobile-menu a{padding:.9rem 0;color:var(--text-soft);border-bottom:1px solid color-mix(in srgb,var(--border) 60%,transparent)}
+
+    .hero{padding:clamp(5.5rem,9vw,8.5rem) 0 clamp(6rem,10vw,9.5rem)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,.98fr) minmax(390px,1.02fr);gap:clamp(3.5rem,7vw,7rem);align-items:center}
+    .hero h1{margin:0;max-width:10.7ch;font-size:clamp(3.9rem,6vw,6rem);line-height:.95;letter-spacing:-.069em;text-wrap:balance}
+    .hero h1 .accent{color:var(--accent)}
+    .hero-copy{max-width:620px;margin:2rem 0 0;color:var(--text-soft);font-size:clamp(1rem,1.6vw,1.12rem);line-height:1.85}
+    .tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+    .tag{padding:.42rem .72rem;border:1px solid var(--border);background:transparent;color:var(--text-soft);font-size:.76rem;font-weight:700;letter-spacing:.01em}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2.4rem}
+    .availability{display:flex;align-items:center;gap:.65rem;margin-top:1.2rem;color:var(--muted);font-size:.84rem}
+    .availability-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 0 4px rgba(34,197,94,.12)}
+    .portrait-stage{position:relative;min-height:520px;background:var(--surface-2);overflow:hidden}
+    .portrait-stage::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 7%,transparent),transparent 48%);pointer-events:none}
+    .portrait-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%}
+    .portrait-fallback{position:absolute;inset:0;display:grid;place-items:center;color:color-mix(in srgb,var(--text) 45%,transparent);font-size:clamp(5rem,13vw,9rem);font-weight:850;letter-spacing:-.08em}
+    .portrait-image:not([src]),.portrait-stage.missing .portrait-image{display:none}
+    .portrait-caption{position:absolute;left:1rem;bottom:1rem;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);padding:.55rem .75rem;color:var(--text-soft);font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+    .projects-header{display:flex;align-items:end;justify-content:space-between;gap:2rem;margin-bottom:clamp(3rem,5vw,5rem)}
+    .text-link{display:inline-flex;align-items:center;gap:.45rem;color:var(--accent);font-weight:800;font-size:.92rem}
+    .text-link .icon{transition:transform .2s var(--ease)}
+    .text-link:hover .icon{transform:translateX(3px)}
+    .featured-project{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.85fr);gap:clamp(3rem,5vw,5rem);align-items:stretch}
+    .project-visual{position:relative;min-width:0;min-height:470px;overflow:hidden;background:var(--surface-2)}
+    .project-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .project-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;padding:.1rem 0}
+    .project-copy h3{margin:0;max-width:12ch;font-size:clamp(2.5rem,4vw,3.8rem);line-height:.98;letter-spacing:-.06em;text-wrap:balance}
+    .project-copy>p{margin:1.4rem 0 0;color:var(--text-soft);line-height:1.82}
+    .project-copy .tags{margin-top:auto;padding-top:2rem}
+    .project-copy .project-link{margin-top:1.15rem}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1.5rem,3vw,3rem);margin-top:clamp(3.5rem,5vw,5rem)}
+    .project-card{min-width:0;display:grid;grid-template-columns:minmax(0,47%) minmax(0,53%);min-height:320px;background:var(--surface-2);overflow:hidden}
+    .project-card-visual{position:relative;min-width:0;min-height:320px;overflow:hidden}
+    .project-card-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+    .project-card-content{min-width:0;padding:clamp(1.5rem,2.1vw,2.3rem);display:flex;flex-direction:column;align-items:flex-start}
+    .project-card h4{margin:0;font-size:1.45rem;line-height:1.12;letter-spacing:-.04em}
+    .project-card p{margin:.9rem 0 0;color:var(--text-soft);line-height:1.72}
+    .project-card .tags{margin-top:auto;padding-top:1.25rem}
+    .project-card .project-link{margin-top:1rem}
+    .project-link[hidden]{display:none}
+
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(4rem,8vw,9rem);align-items:start}
+    .about-quote{margin:0;font-size:clamp(2.7rem,4.8vw,4.6rem);line-height:1.02;letter-spacing:-.06em;text-wrap:balance}
+    .about-copy{margin:0;color:var(--text-soft);font-size:1.07rem;line-height:1.9}
+    .principles{display:grid;grid-template-columns:repeat(3,1fr);margin-top:3rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .principle{padding:1.7rem 1.4rem;border-right:1px solid var(--border)}
+    .principle:first-child{padding-left:0}
+    .principle:last-child{border-right:0;padding-right:0}
+    .principle strong{display:block;margin-bottom:.35rem}
+    .principle span{display:block;color:var(--text-soft);font-size:.91rem;line-height:1.65}
+
+    .skills-grid{display:grid;grid-template-columns:repeat(5,1fr);margin-top:4.5rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .skill-group{padding:2.3rem 1.6rem;border-right:1px solid var(--border)}
+    .skill-group:first-child{padding-left:0}
+    .skill-group:last-child{border-right:0;padding-right:0}
+    .skill-group h4{margin:0 0 1rem;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase}
+    .skill-group ul{list-style:none;padding:0;margin:0;display:grid;gap:.62rem;color:var(--text-soft);font-size:.94rem}
+
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.5rem,3vw,3rem);margin-top:4.5rem}
+    .process-step{padding-top:1.4rem;border-top:1px solid var(--border)}
+    .process-step .num{color:var(--accent);font-size:.75rem;font-weight:850;letter-spacing:.1em}
+    .process-step h4{margin:.55rem 0 .55rem;font-size:1.45rem;letter-spacing:-.035em}
+    .process-step p{margin:0;color:var(--text-soft);line-height:1.75}
+
+    .journey-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(3rem,6vw,6rem);margin-top:4.5rem;align-items:start}
+    .timeline{border-top:1px solid var(--border)}
+    .timeline-item{display:grid;grid-template-columns:82px 12px 1fr;gap:1rem;padding:1.9rem 0;border-bottom:1px solid var(--border)}
+    .timeline-year{color:var(--muted);font-size:.9rem}
+    .timeline-dot{width:7px;height:7px;background:var(--accent);margin-top:.55rem}
+    .timeline-content h4{margin:0 0 .25rem;font-size:1.08rem}
+    .timeline-content p{margin:0;color:var(--text-soft)}
+    .education-card{padding:2.25rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .education-card h4{margin:.2rem 0 .4rem;font-size:1.35rem;line-height:1.2;letter-spacing:-.035em}
+    .education-card p{margin:0;color:var(--text-soft)}
+    .now-card{margin-top:1.5rem;padding:1.5rem;background:var(--surface-2)}
+    .now-card strong{display:block;margin-bottom:.35rem}
+    .now-card p{margin:0;color:var(--text-soft);font-size:.94rem}
+
+    .contact-card{display:grid;grid-template-columns:1fr auto;gap:2.5rem;align-items:center;padding:clamp(2.5rem,5vw,4.5rem);background:var(--text);color:var(--bg)}
+    html[data-theme="dark"] .contact-card{background:#f1f1ed;color:#0d0d0d}
+    .contact-card .eyebrow{color:#93c5fd}
+    html[data-theme="dark"] .contact-card .eyebrow{color:#1f5eff}
+    .contact-card h3{margin:.25rem 0 1rem;font-size:clamp(2.7rem,4.8vw,4.7rem);line-height:1.02;letter-spacing:-.06em;text-wrap:balance}
+    .contact-card p{max-width:650px;margin:0;color:color-mix(in srgb,currentColor 72%,transparent);line-height:1.8}
+    .contact-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.7rem}
+    .contact-actions .btn{background:var(--bg);color:var(--text);border-color:var(--bg)}
+    html[data-theme="dark"] .contact-actions .btn{background:#0d0d0d;color:#f1f1ed;border-color:#0d0d0d}
+    .contact-actions [hidden]{display:none}
+
+    footer{padding:2.6rem 0 3.5rem}
+    .footer-grid{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:2rem;border-top:1px solid var(--border);padding-top:2rem}
+    .footer-copy{color:var(--muted);font-size:.88rem}
+    .footer-links{display:flex;align-items:center;gap:1.1rem;color:var(--text-soft);font-size:.9rem}
+
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:1040px){
+      .nav-links,.nav-actions .btn{display:none}
+      .menu-btn{display:inline-grid}
+      .hero-grid{grid-template-columns:1fr minmax(330px,.8fr);gap:3.5rem}
+      .hero h1{font-size:clamp(3.5rem,7vw,5.3rem)}
+      .featured-project,.about-grid,.journey-grid{grid-template-columns:1fr}
+      .project-visual{min-height:0;aspect-ratio:16/10}
+      .project-copy .tags{margin-top:1.5rem;padding-top:0}
+      .skills-grid{grid-template-columns:repeat(2,1fr)}
+      .skill-group{border-bottom:1px solid var(--border)}
+      .skill-group:nth-child(even){border-right:0}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .contact-card{grid-template-columns:1fr}
+      .contact-actions{justify-content:flex-start}
+      .footer-grid{grid-template-columns:1fr auto}
+      .footer-grid>.footer-copy:last-child{grid-column:1/-1}
+    }
+    @media (max-width:760px){
+      :root{--section-y:4.7rem}
+      .container{width:min(var(--container),calc(100% - 1.5rem))}
+      html{scroll-padding-top:72px}
+      .nav{min-height:70px}
+      .hero{padding-top:4.5rem}
+      .hero-grid{grid-template-columns:1fr;gap:3rem}
+      .hero h1{max-width:11ch;font-size:clamp(3rem,14vw,4.6rem)}
+      .portrait-stage{min-height:0;aspect-ratio:4/5}
+      .hero-actions{display:grid;grid-template-columns:1fr}
+      .hero-actions .btn{width:100%}
+      .projects-header{align-items:flex-start;flex-direction:column}
+      .project-grid{grid-template-columns:1fr}
+      .project-card{grid-template-columns:minmax(0,42%) minmax(0,58%)}
+      .principles,.skills-grid,.process-grid{grid-template-columns:1fr}
+      .principle,.principle:first-child,.principle:last-child{padding:1.35rem 0;border-right:0;border-bottom:1px solid var(--border)}
+      .principle:last-child{border-bottom:0}
+      .skill-group,.skill-group:first-child,.skill-group:last-child{padding:1.7rem 0;border-right:0}
+      .contact-actions{display:grid;grid-template-columns:1fr}
+      .contact-actions .btn{width:100%}
+      .footer-grid{display:flex;flex-direction:column;align-items:flex-start}
+      .footer-links{flex-wrap:wrap}
+    }
+    @media (max-width:560px){
+      .hero h1{font-size:clamp(2.75rem,15vw,4.1rem)}
+      .section-title{font-size:clamp(2.35rem,11vw,3.4rem)}
+      .project-card{grid-template-columns:1fr}
+      .project-card-visual{min-height:0;aspect-ratio:4/3}
+      .timeline-item{grid-template-columns:58px 10px 1fr;gap:.75rem}
+      .contact-card{padding:2rem 1.25rem}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{transition:none!important;animation:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Christian Loyd Cesista",
+    "jobTitle":"Software Developer",
+    "alumniOf":{"@type":"CollegeOrUniversity","name":"Eastern Samar State University — Arteche Campus"}
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="Christian home">Christian<span>.</span></a>
+        <div class="nav-links" id="desktopNav">
+          <a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+            <svg class="icon" id="themeIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.1A8.5 8.5 0 0 1 8.9 3.6 8.5 8.5 0 1 0 20.4 15.1Z"/></svg>
+          </button>
+          <a class="btn" data-link="resume" hidden>Resume <svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></a>
+          <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#contact">Contact</a><a data-link="resume" hidden>Resume ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="eyebrow">Software Developer</div>
+          <h1>I build practical software for <span class="accent">real-world problems.</span></h1>
+          <p class="hero-copy">I develop web applications and information systems using backend logic, structured data, and thoughtful interfaces that solve meaningful problems.</p>
+          <div class="tags" aria-label="Primary technologies"><span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">MySQL</span><span class="tag">AJAX</span><span class="tag">Bootstrap</span></div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">Explore My Work <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn" data-link="github" hidden>GitHub <svg class="icon" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3.3-.4 6.8-1.6 6.8-7A5.5 5.5 0 0 0 19.3 4 5.1 5.1 0 0 0 19.2.5S18 0 15 2a13.4 13.4 0 0 0-7 0C5 .0 3.8.5 3.8.5A5.1 5.1 0 0 0 3.7 4a5.5 5.5 0 0 0-1.5 3.8c0 5.4 3.5 6.6 6.8 7A4.8 4.8 0 0 0 8 18v4"/><path d="M8 19c-3 .9-3-1.5-4-2"/></svg></a>
+          </div>
+          <div class="availability"><span class="availability-dot" aria-hidden="true"></span><span>Open to software development opportunities and collaborations.</span></div>
+        </div>
+        <div class="portrait-stage reveal" id="portraitStage" aria-label="Profile portrait">
+          <div class="portrait-fallback" aria-hidden="true">CL</div>
+          <img class="portrait-image" src="profile-picture2.png" alt="Christian Loyd Cesista" id="portraitImage" />
+          <div class="portrait-caption">Software Developer · Philippines</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="projects-header reveal">
+          <div><div class="eyebrow">01 / Selected Work</div><h2 class="section-title">Systems built around real-world problems.</h2></div>
+          <a class="text-link" data-link="github" hidden>View all projects <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+
+        <article class="featured-project reveal" id="bcis">
+          <div class="project-visual"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjAwIDEwMDAiPgogIDxyZWN0IHdpZHRoPSIxNjAwIiBoZWlnaHQ9IjEwMDAiIGZpbGw9IiNlY2VjZTciLz4KICA8cmVjdCB4PSI5MCIgeT0iOTAiIHdpZHRoPSIxNDIwIiBoZWlnaHQ9IjgyMCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjY2ZjZmM4IiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cmVjdCB4PSI5MCIgeT0iOTAiIHdpZHRoPSIyNzAiIGhlaWdodD0iODIwIiBmaWxsPSIjMTIxODI2Ii8+CiAgPHRleHQgeD0iMTM1IiB5PSIxNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iNzAwIiBmb250LXNpemU9IjI2IiBmaWxsPSIjZmZmZmZmIj5CQ0lTPC90ZXh0PgogIDxnIGZpbGw9IiMzMDNhNGIiPjxyZWN0IHg9IjEzNSIgeT0iMjEwIiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjE0Ii8+PHJlY3QgeD0iMTM1IiB5PSIyNjAiIHdpZHRoPSIxODUiIGhlaWdodD0iMTQiLz48cmVjdCB4PSIxMzUiIHk9IjMxMCIgd2lkdGg9IjE3MCIgaGVpZ2h0PSIxNCIvPjxyZWN0IHg9IjEzNSIgeT0iMzYwIiB3aWR0aD0iMTMwIiBoZWlnaHQ9IjE0Ii8+PHJlY3QgeD0iMTM1IiB5PSI0MTAiIHdpZHRoPSIxOTAiIGhlaWdodD0iMTQiLz48L2c+CiAgPHJlY3QgeD0iMTM1IiB5PSIyMTAiIHdpZHRoPSIxNDUiIGhlaWdodD0iMTQiIGZpbGw9IiM2ZjljZmYiLz4KICA8dGV4dCB4PSI0MTAiIHk9IjE2NSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxMTE4MjciPk11bmljaXBhbGl0eSBJbnRlbGxpZ2VuY2U8L3RleHQ+CiAgPHRleHQgeD0iNDEwIiB5PSIyMDUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY3MDg1Ij5Ib3VzZWhvbGQgYXNzZXNzbWVudCBhbmQgY29tbXVuaXR5IGFuYWx5dGljcyBvdmVydmlldzwvdGV4dD4KICA8Zz4KICAgIDxyZWN0IHg9IjQxMCIgeT0iMjYwIiB3aWR0aD0iMjQ1IiBoZWlnaHQ9IjEyNSIgZmlsbD0iI2Y3ZjhmYSIgc3Ryb2tlPSIjZGVkZmUyIi8+CiAgICA8cmVjdCB4PSI2ODAiIHk9IjI2MCIgd2lkdGg9IjI0NSIgaGVpZ2h0PSIxMjUiIGZpbGw9IiNmN2Y4ZmEiIHN0cm9rZT0iI2RlZGZlMiIvPgogICAgPHJlY3QgeD0iOTUwIiB5PSIyNjAiIHdpZHRoPSIyNDUiIGhlaWdodD0iMTI1IiBmaWxsPSIjZjdmOGZhIiBzdHJva2U9IiNkZWRmZTIiLz4KICAgIDxyZWN0IHg9IjEyMjAiIHk9IjI2MCIgd2lkdGg9IjI0NSIgaGVpZ2h0PSIxMjUiIGZpbGw9IiNmN2Y4ZmEiIHN0cm9rZT0iI2RlZGZlMiIvPgogICAgPHRleHQgeD0iNDQ1IiB5PSIzMDUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY3MDg1Ij5Ib3VzZWhvbGRzPC90ZXh0Pjx0ZXh0IHg9IjQ0NSIgeT0iMzUwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTgyNyI+Miw0MTg8L3RleHQ+CiAgICA8dGV4dCB4PSI3MTUiIHk9IjMwNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiM2NjcwODUiPkNvdmVyYWdlPC90ZXh0Pjx0ZXh0IHg9IjcxNSIgeT0iMzUwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTgyNyI+ODIlPC90ZXh0PgogICAgPHRleHQgeD0iOTg1IiB5PSIzMDUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNjY3MDg1Ij5Bc3Nlc3NlZDwvdGV4dD48dGV4dCB4PSI5ODUiIHk9IjM1MCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxMTE4MjciPjEsOTgyPC90ZXh0PgogICAgPHRleHQgeD0iMTI1NSIgeT0iMzA1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzY2NzA4NSI+UHJpb3JpdHk8L3RleHQ+PHRleHQgeD0iMTI1NSIgeT0iMzUwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzFmNWVmZiI+MzE0PC90ZXh0PgogIDwvZz4KICA8cmVjdCB4PSI0MTAiIHk9IjQzNSIgd2lkdGg9IjY2MCIgaGVpZ2h0PSIzOTAiIGZpbGw9IiNmOWZhZmIiIHN0cm9rZT0iI2RlZGZlMiIvPgogIDx0ZXh0IHg9IjQ0NSIgeT0iNDg1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTgyNyI+QmFyYW5nYXkgaW50ZWxsaWdlbmNlIG1hcDwvdGV4dD4KICA8cGF0aCBkPSJNNTAwIDY1MGwxMDUtOTAgOTUgMzUgNjAtNzUgMTAwIDQ1IDgwLTMwIDcwIDk1LTQ1IDkwLTEwNSA0MC05MC0xOC03OCA1NC0xMjAtMjVaIiBmaWxsPSIjZGNlN2ZmIiBzdHJva2U9IiM4YWFhZmMiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxnIGZpbGw9IiMxZjVlZmYiPjxjaXJjbGUgY3g9IjYxMCIgY3k9IjY0MCIgcj0iMTQiLz48Y2lyY2xlIGN4PSI3NDUiIGN5PSI2MDUiIHI9IjEyIi8+PGNpcmNsZSBjeD0iODY1IiBjeT0iNjc1IiByPSIxNiIvPjxjaXJjbGUgY3g9IjkzNSIgY3k9IjU5MCIgcj0iMTEiLz48L2c+CiAgPHJlY3QgeD0iMTEwMCIgeT0iNDM1IiB3aWR0aD0iMzY1IiBoZWlnaHQ9IjM5MCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGVkZmUyIi8+CiAgPHRleHQgeD0iMTEzNSIgeT0iNDg1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTgyNyI+UHJpb3JpdHkgZGlzdHJpYnV0aW9uPC90ZXh0PgogIDxnIGZpbGw9IiNlOGVlZmMiPjxyZWN0IHg9IjExMzUiIHk9IjU1NSIgd2lkdGg9IjI2MCIgaGVpZ2h0PSIyNCIvPjxyZWN0IHg9IjExMzUiIHk9IjYyNSIgd2lkdGg9IjIxMCIgaGVpZ2h0PSIyNCIvPjxyZWN0IHg9IjExMzUiIHk9IjY5NSIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIyNCIvPjwvZz4KICA8ZyBmaWxsPSIjMWY1ZWZmIj48cmVjdCB4PSIxMTM1IiB5PSI1NTUiIHdpZHRoPSIxNzUiIGhlaWdodD0iMjQiLz48cmVjdCB4PSIxMTM1IiB5PSI2MjUiIHdpZHRoPSIxMjUiIGhlaWdodD0iMjQiLz48cmVjdCB4PSIxMTM1IiB5PSI2OTUiIHdpZHRoPSI4NSIgaGVpZ2h0PSIyNCIvPjwvZz4KICA8dGV4dCB4PSI5MCIgeT0iOTcwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzc3Nzc3MiI+TU9DSyBQUk9KRUNUIFNDUkVFTlNIT1Qg4oCUIDE2OjEwPC90ZXh0Pgo8L3N2Zz4K" alt="Barangay Community Intelligence System dashboard concept" /></div>
+          <div class="project-copy">
+            <div class="eyebrow">Featured Project</div>
+            <h3>Barangay Community Intelligence System</h3>
+            <p>A community intelligence and citizen-service platform for household information, administrative workflows, assessment, analytics, and document services.</p>
+            <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span><span class="tag">Dompdf</span></div>
+            <a class="text-link project-link" data-project="bcis" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </article>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-card-visual"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjZWNlY2U3Ii8+CiAgPHJlY3QgeD0iMTE1IiB5PSI3MCIgd2lkdGg9Ijk3MCIgaGVpZ2h0PSI3NjAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2NmY2ZjOCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHRleHQgeD0iMTcwIiB5PSIxNDAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI2IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij5Qcm9qZWN0IE1hbmFnZXI8L3RleHQ+CiAgPHRleHQgeD0iMTcwIiB5PSIxNzgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmaWxsPSIjNjY3MDg1Ij5Ub2RheSDCtyBNb25kYXksIEF1Z3VzdCAyMjwvdGV4dD4KICA8Zz48cmVjdCB4PSIxNzAiIHk9IjIzMCIgd2lkdGg9IjI1MCIgaGVpZ2h0PSIxMjAiIGZpbGw9IiNmN2Y4ZmEiIHN0cm9rZT0iI2RlZGZlMiIvPjxyZWN0IHg9IjQ0NSIgeT0iMjMwIiB3aWR0aD0iMjUwIiBoZWlnaHQ9IjEyMCIgZmlsbD0iI2Y3ZjhmYSIgc3Ryb2tlPSIjZGVkZmUyIi8+PHJlY3QgeD0iNzIwIiB5PSIyMzAiIHdpZHRoPSIyNTAiIGhlaWdodD0iMTIwIiBmaWxsPSIjZjdmOGZhIiBzdHJva2U9IiNkZWRmZTIiLz48L2c+CiAgPHRleHQgeD0iMjAwIiB5PSIyNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE1IiBmaWxsPSIjNjY3MDg1Ij5BQ1RJVkUgUFJPSkVDVFM8L3RleHQ+PHRleHQgeD0iMjAwIiB5PSIzMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij4wNjwvdGV4dD4KICA8dGV4dCB4PSI0NzUiIHk9IjI3NSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiM2NjcwODUiPlRBU0tTIERPTkU8L3RleHQ+PHRleHQgeD0iNDc1IiB5PSIzMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij4yNzwvdGV4dD4KICA8dGV4dCB4PSI3NTAiIHk9IjI3NSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiM2NjcwODUiPkNPTVBMRVRJT048L3RleHQ+PHRleHQgeD0iNzUwIiB5PSIzMjAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMWY1ZWZmIj43NCU8L3RleHQ+CiAgPHRleHQgeD0iMTcwIiB5PSI0MzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij5DdXJyZW50IHByb2plY3RzPC90ZXh0PgogIDxnIGZpbGw9IiNmYmZiZjgiIHN0cm9rZT0iI2RlZGZlMiI+PHJlY3QgeD0iMTcwIiB5PSI0NjUiIHdpZHRoPSI4MDAiIGhlaWdodD0iNzAiLz48cmVjdCB4PSIxNzAiIHk9IjU1NSIgd2lkdGg9IjgwMCIgaGVpZ2h0PSI3MCIvPjxyZWN0IHg9IjE3MCIgeT0iNjQ1IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjcwIi8+PC9nPgogIDxnIGZpbGw9IiMxZjVlZmYiPjxyZWN0IHg9IjgxNSIgeT0iNDkwIiB3aWR0aD0iMTE1IiBoZWlnaHQ9IjE2Ii8+PHJlY3QgeD0iODE1IiB5PSI1ODAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIxNiIvPjxyZWN0IHg9IjgxNSIgeT0iNjcwIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE2Ii8+PC9nPgogIDx0ZXh0IHg9IjE5NSIgeT0iNTA3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNyIgZmlsbD0iIzExMTgyNyI+UG9ydGZvbGlvIFdlYnNpdGU8L3RleHQ+PHRleHQgeD0iMTk1IiB5PSI1OTciIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMTExODI3Ij5CQ0lTIERvY3VtZW50YXRpb248L3RleHQ+PHRleHQgeD0iMTk1IiB5PSI2ODciIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMTExODI3Ij5EZXBsb3ltZW50IEV4cGVyaW1lbnQ8L3RleHQ+CiAgPHRleHQgeD0iMTE1IiB5PSI4NzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNzc3NzcyIj5NT0NLIFBST0pFQ1QgU0NSRUVOU0hPVCDigJQgNDozPC90ZXh0Pgo8L3N2Zz4K" alt="Personal Project Manager dashboard concept" /></div>
+            <div class="project-card-content">
+              <h4>Personal Project Manager</h4>
+              <p>A mobile-first application for tracking projects, tasks, and progress with clear dashboards and lightweight workflows.</p>
+              <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span></div>
+              <a class="text-link project-link" data-project="projectManager" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-card-visual"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDkwMCI+CiAgPHJlY3Qgd2lkdGg9IjEyMDAiIGhlaWdodD0iOTAwIiBmaWxsPSIjZTllOWU0Ii8+CiAgPHJlY3QgeD0iOTUiIHk9IjY1IiB3aWR0aD0iMTAxMCIgaGVpZ2h0PSI3NzAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2NkY2RjNyIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPHJlY3QgeD0iOTUiIHk9IjY1IiB3aWR0aD0iMjEwIiBoZWlnaHQ9Ijc3MCIgZmlsbD0iIzE3MTcxNyIvPgogIDx0ZXh0IHg9IjEzMCIgeT0iMTI1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI2ZmZmZmZiI+SW52ZW50b3J5PC90ZXh0PgogIDxnIGZpbGw9IiM0MTQxNDEiPjxyZWN0IHg9IjEzMCIgeT0iMTg1IiB3aWR0aD0iMTE1IiBoZWlnaHQ9IjEyIi8+PHJlY3QgeD0iMTMwIiB5PSIyMzAiIHdpZHRoPSIxMzUiIGhlaWdodD0iMTIiLz48cmVjdCB4PSIxMzAiIHk9IjI3NSIgd2lkdGg9IjEwNSIgaGVpZ2h0PSIxMiIvPjxyZWN0IHg9IjEzMCIgeT0iMzIwIiB3aWR0aD0iMTQ1IiBoZWlnaHQ9IjEyIi8+PC9nPgogIDxyZWN0IHg9IjEzMCIgeT0iMTg1IiB3aWR0aD0iMTE1IiBoZWlnaHQ9IjEyIiBmaWxsPSIjNmY5Y2ZmIi8+CiAgPHRleHQgeD0iMzUwIiB5PSIxMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjI4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij5JbnZlbnRvcnkgT3ZlcnZpZXc8L3RleHQ+CiAgPGc+PHJlY3QgeD0iMzUwIiB5PSIxOTAiIHdpZHRoPSIyMTAiIGhlaWdodD0iMTA1IiBmaWxsPSIjZjhmOGY2IiBzdHJva2U9IiNkZWRlZDkiLz48cmVjdCB4PSI1ODUiIHk9IjE5MCIgd2lkdGg9IjIxMCIgaGVpZ2h0PSIxMDUiIGZpbGw9IiNmOGY4ZjYiIHN0cm9rZT0iI2RlZGVkOSIvPjxyZWN0IHg9IjgyMCIgeT0iMTkwIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjEwNSIgZmlsbD0iI2Y4ZjhmNiIgc3Ryb2tlPSIjZGVkZWQ5Ii8+PC9nPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjM1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzY2NzA4NSI+VE9UQUwgSVRFTVM8L3RleHQ+PHRleHQgeD0iMzgwIiB5PSIyNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjMwIiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij4xLDI0ODwvdGV4dD4KICA8dGV4dCB4PSI2MTUiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiIGZpbGw9IiM2NjcwODUiPkxPVyBTVE9DSzwvdGV4dD48dGV4dCB4PSI2MTUiIHk9IjI3NSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMxZjVlZmYiPjE4PC90ZXh0PgogIDx0ZXh0IHg9Ijg1MCIgeT0iMjM1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzY2NzA4NSI+VFJBTlNBQ1RJT05TPC90ZXh0Pjx0ZXh0IHg9Ijg1MCIgeT0iMjc1IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzExMTgyNyI+MzQyPC90ZXh0PgogIDxyZWN0IHg9IjM1MCIgeT0iMzUwIiB3aWR0aD0iNjgwIiBoZWlnaHQ9IjM5MCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZGVkZWQ5Ii8+CiAgPHRleHQgeD0iMzgwIiB5PSI0MDAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMTExODI3Ij5SZWNlbnQgaW52ZW50b3J5PC90ZXh0PgogIDxnIHN0cm9rZT0iI2U0ZTRkZiI+PGxpbmUgeDE9IjM4MCIgeTE9IjQ2MCIgeDI9IjEwMDAiIHkyPSI0NjAiLz48bGluZSB4MT0iMzgwIiB5MT0iNTMwIiB4Mj0iMTAwMCIgeTI9IjUzMCIvPjxsaW5lIHgxPSIzODAiIHkxPSI2MDAiIHgyPSIxMDAwIiB5Mj0iNjAwIi8+PGxpbmUgeDE9IjM4MCIgeTE9IjY3MCIgeDI9IjEwMDAiIHkyPSI2NzAiLz48L2c+CiAgPGcgZmlsbD0iIzc3Nzc3MiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTUiPjx0ZXh0IHg9IjM4MCIgeT0iNDQ1Ij5JdGVtPC90ZXh0Pjx0ZXh0IHg9IjcxMCIgeT0iNDQ1Ij5TdG9jazwvdGV4dD48dGV4dCB4PSI4NjAiIHk9IjQ0NSI+U3RhdHVzPC90ZXh0PjwvZz4KICA8ZyBmaWxsPSIjMTExODI3IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiI+PHRleHQgeD0iMzgwIiB5PSI1MDUiPk5ldHdvcmsgQ2FibGU8L3RleHQ+PHRleHQgeD0iNzEwIiB5PSI1MDUiPjg0PC90ZXh0Pjx0ZXh0IHg9Ijg2MCIgeT0iNTA1Ij5IZWFsdGh5PC90ZXh0Pjx0ZXh0IHg9IjM4MCIgeT0iNTc1Ij5QcmludGVyIEluazwvdGV4dD48dGV4dCB4PSI3MTAiIHk9IjU3NSI+MDg8L3RleHQ+PHRleHQgeD0iODYwIiB5PSI1NzUiPkxvdzwvdGV4dD48dGV4dCB4PSIzODAiIHk9IjY0NSI+T2ZmaWNlIFBhcGVyPC90ZXh0Pjx0ZXh0IHg9IjcxMCIgeT0iNjQ1Ij4xNDM8L3RleHQ+PHRleHQgeD0iODYwIiB5PSI2NDUiPkhlYWx0aHk8L3RleHQ+PC9nPgogIDx0ZXh0IHg9Ijk1IiB5PSI4NzUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmaWxsPSIjNzc3NzcyIj5NT0NLIFBST0pFQ1QgU0NSRUVOU0hPVCDigJQgNDozPC90ZXh0Pgo8L3N2Zz4K" alt="Inventory Monitoring System dashboard concept" /></div>
+            <div class="project-card-content">
+              <h4>Inventory Monitoring System</h4>
+              <p>A web-based inventory system for monitoring products, stock activity, expiration dates, and upcoming-expiration notifications.</p>
+              <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">JavaScript</span></div>
+              <a class="text-link project-link" data-project="inventory" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal"><div class="eyebrow">02 / About Me</div><p class="about-quote">I enjoy building systems where software has a clear, practical purpose.</p></div>
+        <div class="reveal">
+          <p class="about-copy">I work across backend workflows, databases, and responsive interfaces to build systems that are reliable, maintainable, and useful. I’m expanding into modern frontend technologies such as React, Next.js, and TypeScript while continuing to strengthen application architecture and product thinking.</p>
+          <div class="principles">
+            <div class="principle"><strong>Problem Solver</strong><span>I start by understanding the need before choosing the implementation.</span></div>
+            <div class="principle"><strong>Detail Oriented</strong><span>I care about structure, quality, usability, and long-term maintainability.</span></div>
+            <div class="principle"><strong>Continuous Learner</strong><span>I keep improving both technical depth and product judgment.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="reveal"><div class="eyebrow">03 / Capabilities</div><h2 class="section-title">A focused stack for building complete web applications.</h2></div>
+        <div class="skills-grid reveal">
+          <div class="skill-group"><h4>Application Development</h4><ul><li>PHP</li><li>MVC Architecture</li><li>AJAX</li><li>Authentication</li><li>RESTful Workflows</li></ul></div>
+          <div class="skill-group"><h4>Frontend</h4><ul><li>JavaScript</li><li>HTML / CSS</li><li>Bootstrap</li><li>Responsive Design</li><li>UI Components</li></ul></div>
+          <div class="skill-group"><h4>Data & Database</h4><ul><li>MySQL</li><li>MariaDB</li><li>SQL Queries</li><li>Database Design</li><li>Data Relationships</li></ul></div>
+          <div class="skill-group"><h4>Tools & Technologies</h4><ul><li>Git & GitHub</li><li>Composer</li><li>VS Code</li><li>Dompdf</li><li>XAMPP / Local Dev</li></ul></div>
+          <div class="skill-group"><h4>Currently Exploring</h4><ul><li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Three.js / 3D Web</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="reveal"><div class="eyebrow">04 / How I Work</div><h2 class="section-title">A simple process that keeps complex systems understandable.</h2></div>
+        <div class="process-grid">
+          <div class="process-step reveal"><span class="num">01</span><h4>Understand</h4><p>I learn the users, the problem, and the constraints before implementation begins.</p></div>
+          <div class="process-step reveal"><span class="num">02</span><h4>Design</h4><p>I define workflows, data structures, responsibilities, and system boundaries.</p></div>
+          <div class="process-step reveal"><span class="num">03</span><h4>Build</h4><p>I implement features in manageable, testable phases instead of one large release.</p></div>
+          <div class="process-step reveal"><span class="num">04</span><h4>Refine</h4><p>I test usability, behavior, responsiveness, and maintainability, then improve.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="reveal"><div class="eyebrow">05 / Journey</div><h2 class="section-title">Growing through increasingly complex software projects.</h2></div>
+        <div class="journey-grid">
+          <div class="timeline reveal">
+            <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-dot"></div><div class="timeline-content"><h4>Barangay Community Intelligence System</h4><p>Full-stack development · Capstone / community information system</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-dot"></div><div class="timeline-content"><h4>3D Virtual Fitting & Styling Prototype</h4><p>Interactive 3D web exploration · digital styling and fit visualization</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">2026</div><div class="timeline-dot"></div><div class="timeline-content"><h4>Personal Project Manager</h4><p>Independent project · mobile-first productivity application</p></div></div>
+            <div class="timeline-item"><div class="timeline-year">2025</div><div class="timeline-dot"></div><div class="timeline-content"><h4>Web Application Development</h4><p>PHP · JavaScript · MySQL</p></div></div>
+          </div>
+          <aside class="reveal">
+            <div class="education-card"><div class="eyebrow">Education</div><h4>Bachelor of Science in Information Technology</h4><p>Eastern Samar State University · Arteche Campus</p></div>
+            <div class="now-card"><strong>Current direction</strong><p>Strengthening full-stack fundamentals while exploring modern frontend development and interactive 3D experiences for the web.</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div><div class="eyebrow">Let's Connect</div><h3>Have a role, project, or idea worth building?</h3><p>I’m open to software development opportunities, collaborations, and interesting projects where practical software can make a real difference.</p></div>
+          <div class="contact-actions">
+            <a class="btn" data-link="email" hidden>Email Me</a>
+            <a class="btn" data-link="github" hidden>GitHub ↗</a>
+            <a class="btn" data-link="linkedin" hidden>LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>Christian.</strong><div class="footer-copy">Software Developer</div></div>
+      <div class="footer-links"><a href="#work">Work</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+      <div class="footer-copy">© <span id="year"></span> Christian Loyd Cesista.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* =========================================================
+       PUBLISHING CONFIGURATION
+       Replace only these values before deploying.
+       Leave a value empty to hide its button automatically.
+       ========================================================= */
+    const PORTFOLIO = {
+      github: "",
+      linkedin: "",
+      email: "",
+      resume: "",
+      projects: {
+        bcis: "",
+        projectManager: "",
+        inventory: ""
+      }
+    };
+
+    const root = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const moonPath = '<path d="M20.4 15.1A8.5 8.5 0 0 1 8.9 3.6 8.5 8.5 0 1 0 20.4 15.1Z"/>';
+    const sunPath = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/>';
+
+    function applyTheme(theme) {
+      const dark = theme === "dark";
+      root.dataset.theme = theme;
+      themeToggle.setAttribute("aria-pressed", String(dark));
+      themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+      themeIcon.innerHTML = dark ? sunPath : moonPath;
+      themeColor.setAttribute("content", dark ? "#0d0d0d" : "#f7f7f4");
+    }
+    const savedTheme = localStorage.getItem("portfolio-theme");
+    const preferredDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    applyTheme(savedTheme || (preferredDark ? "dark" : "light"));
+    themeToggle.addEventListener("click", () => {
+      const next = root.dataset.theme === "dark" ? "light" : "dark";
+      applyTheme(next);
+      localStorage.setItem("portfolio-theme", next);
+    });
+
+    function externalize(el, url) {
+      if (!url) return;
+      el.href = url;
+      if (/^https?:\/\//i.test(url)) { el.target = "_blank"; el.rel = "noopener noreferrer"; }
+      el.hidden = false;
+    }
+    document.querySelectorAll('[data-link="github"]').forEach(el => externalize(el, PORTFOLIO.github));
+    document.querySelectorAll('[data-link="linkedin"]').forEach(el => externalize(el, PORTFOLIO.linkedin));
+    document.querySelectorAll('[data-link="resume"]').forEach(el => externalize(el, PORTFOLIO.resume));
+    document.querySelectorAll('[data-link="email"]').forEach(el => {
+      if (!PORTFOLIO.email) return;
+      el.href = "mailto:" + PORTFOLIO.email;
+      el.hidden = false;
+    });
+    document.querySelectorAll('[data-project]').forEach(el => externalize(el, PORTFOLIO.projects[el.dataset.project] || ""));
+
+    const portrait = document.getElementById("portraitImage");
+    const portraitStage = document.getElementById("portraitStage");
+    portrait.addEventListener("error", () => portraitStage.classList.add("missing"));
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    function closeMenu() { mobileMenu.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false"); menuBtn.textContent="☰"; }
+    menuBtn.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.textContent = open ? "×" : "☰";
+    });
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add("visible"); revealObserver.unobserve(entry.target); } });
+      }, { threshold: .14 });
+      document.querySelectorAll(".reveal:not(.visible)").forEach(el => revealObserver.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+    }
+
+    const sectionLinks = [...document.querySelectorAll('#desktopNav a')];
+    const sections = sectionLinks.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    if ("IntersectionObserver" in window) {
+      const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          sectionLinks.forEach(a => a.removeAttribute('aria-current'));
+          const active = sectionLinks.find(a => a.getAttribute('href') === '#' + entry.target.id);
+          if (active) active.setAttribute('aria-current','true');
+        });
+      }, { rootMargin: '-28% 0px -62% 0px', threshold: 0 });
+      sections.forEach(s => navObserver.observe(s));
+    }
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
