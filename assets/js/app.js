@@ -1,20 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
   /* =========================================================
        PUBLISHING CONFIGURATION
-       Replace only these values before deploying.
-       Leave a value empty to hide its button automatically.
+       Leave unavailable project URLs empty so their buttons stay hidden.
        ========================================================= */
   const PORTFOLIO = {
-    github: "",
+    github: "https://github.com/ChristianLoydCesista",
     linkedin: "",
-    email: "",
+    email: "christiangcesista@gmail.com",
     resume: "",
     projects: {
-      bcis: "",
-      projectManager: "",
-      inventory: "",
+      bcis: "https://github.com/ChristianLoydCesista/prototype",
+      expiryApp: "",
+      virtualFitting: "",
     },
   };
+
+  /* Keep the published project highlights synchronized with the current portfolio direction. */
+  const projectCards = document.querySelectorAll("#work .project-card");
+  if (projectCards.length >= 2) {
+    projectCards[0].id = "expiryapp";
+    projectCards[0].innerHTML = `
+      <div class="project-card-visual">
+        <img src="assets/img/expiryapp-ui.svg" alt="ExpiryApp representative Android interface showing date scanning, saved expiry dates, countdowns, and reminders" />
+      </div>
+      <div class="project-card-content">
+        <h4>ExpiryApp</h4>
+        <p>An Android application that scans expiry dates, stores product records, calculates remaining time, and notifies users before items expire.</p>
+        <div class="tags"><span class="tag">Android</span><span class="tag">Java</span><span class="tag">Date Scanning</span><span class="tag">Notifications</span></div>
+        <a class="text-link project-link" data-project="expiryApp" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>`;
+
+    projectCards[1].id = "virtual-fitting-room";
+    projectCards[1].innerHTML = `
+      <div class="project-card-visual">
+        <img src="assets/img/virtual-fitting-room-ui.svg" alt="Virtual Fitting Room representative interface showing a 3D model, wardrobe controls, fit options, and outfit styling" />
+      </div>
+      <div class="project-card-content">
+        <h4>Virtual Fitting Room</h4>
+        <p>An interactive 3D fitting and styling prototype where shoppers can build outfits on a digital body, compare garments and colors, and explore size and fit visualization.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">3D Web</span><span class="tag">GLB / GLTF</span></div>
+        <a class="text-link project-link" data-project="virtualFitting" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>`;
+  }
+
+  document.querySelectorAll("#journey .timeline-item").forEach((item) => {
+    const heading = item.querySelector("h4");
+    if (heading && heading.textContent.trim() === "Personal Project Manager") {
+      heading.textContent = "ExpiryApp";
+      const copy = item.querySelector("p");
+      if (copy) copy.textContent = "Android application · expiry-date scanning, storage, calculations, and notifications";
+    }
+  });
 
   const root = document.documentElement;
   const themeToggle = document.getElementById("themeToggle");
