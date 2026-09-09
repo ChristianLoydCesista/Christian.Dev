@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Virtual Fitting Room representative interface</title>
+  <desc id="desc">Portfolio mockup showing a 3D mannequin, garment controls, outfit selection, and fitting options.</desc>
+  <rect width="1200" height="900" fill="#e9e9e4"/>
+  <text x="72" y="80" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#111827">Virtual Fitting Room</text>
+  <text x="72" y="112" font-family="Arial, sans-serif" font-size="14" fill="#667085">REPRESENTATIVE UI · INTERACTIVE 3D STYLING PROTOTYPE</text>
+
+  <rect x="70" y="150" width="1060" height="650" fill="#fbfbf8" stroke="#cfd2d7"/>
+  <rect x="70" y="150" width="1060" height="62" fill="#111827"/>
+  <text x="104" y="188" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="white">FitStudio</text>
+  <text x="855" y="188" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">MY OUTFIT</text>
+  <text x="960" y="188" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">BODY PROFILE</text>
+
+  <rect x="70" y="212" width="190" height="588" fill="#f3f3ef"/>
+  <text x="101" y="256" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#667085">WARDROBE</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="98" y="286" width="134" height="82" fill="#ffffff" stroke="#deded8"/>
+    <path d="M137 307l13-10 13 10 14-6 14 17-12 10v25h-58v-25l-12-10 14-17z" fill="#1f5eff" opacity=".85"/>
+    <text x="112" y="390" font-size="12" font-weight="700" fill="#101828">Tops</text>
+    <rect x="98" y="414" width="134" height="82" fill="#ffffff" stroke="#deded8"/>
+    <path d="M132 440h66l-10 42h-46z" fill="#202938"/>
+    <text x="112" y="518" font-size="12" font-weight="700" fill="#101828">Bottoms</text>
+    <rect x="98" y="542" width="134" height="82" fill="#ffffff" stroke="#deded8"/>
+    <circle cx="165" cy="576" r="24" fill="#d9b28c"/>
+    <path d="M146 576h38" stroke="#101828" stroke-width="5"/>
+    <text x="112" y="646" font-size="12" font-weight="700" fill="#101828">Accessories</text>
+  </g>
+
+  <rect x="260" y="212" width="550" height="588" fill="#eeefea"/>
+  <text x="294" y="252" font-family="Arial, sans-serif" font-size="12" fill="#667085">3D VIEW</text>
+  <ellipse cx="535" cy="729" rx="128" ry="24" fill="#d8d9d3"/>
+  <circle cx="535" cy="333" r="46" fill="#d9b28c"/>
+  <rect x="500" y="378" width="70" height="148" rx="30" fill="#d9b28c"/>
+  <path d="M488 395c-48 24-79 93-83 156l30 2c9-65 31-107 63-124z" fill="#d9b28c"/>
+  <path d="M582 395c48 24 79 93 83 156l-30 2c-9-65-31-107-63-124z" fill="#d9b28c"/>
+  <path d="M496 391h78l30 126-67 52-71-48z" fill="#1f5eff"/>
+  <path d="M504 523l-24 172h42l17-134 17 134h42l-28-172z" fill="#1b2433"/>
+  <path d="M496 391l39 48 39-48" fill="none" stroke="#dbe7ff" stroke-width="5"/>
+  <rect x="288" y="701" width="145" height="42" fill="#ffffff" stroke="#d7d8d2"/>
+  <text x="315" y="727" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#101828">ROTATE MODEL</text>
+  <rect x="638" y="701" width="145" height="42" fill="#111827"/>
+  <text x="674" y="727" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">TRY OUTFIT</text>
+
+  <rect x="810" y="212" width="320" height="588" fill="#ffffff"/>
+  <text x="846" y="258" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#667085">CURRENT LOOK</text>
+  <text x="846" y="296" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#101828">Smart Casual</text>
+  <text x="846" y="326" font-family="Arial, sans-serif" font-size="13" fill="#667085">Blue shirt · Dark trousers</text>
+  <line x1="846" y1="360" x2="1092" y2="360" stroke="#e4e7ec"/>
+  <text x="846" y="402" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#667085">FIT CONTROLS</text>
+  <g font-family="Arial, sans-serif">
+    <text x="846" y="444" font-size="13" fill="#101828">Body profile</text>
+    <rect x="846" y="460" width="246" height="46" fill="#f6f7f4" stroke="#deded8"/>
+    <text x="864" y="489" font-size="12" fill="#475467">Standard / editable</text>
+    <text x="846" y="548" font-size="13" fill="#101828">Color</text>
+    <circle cx="865" cy="580" r="13" fill="#1f5eff"/>
+    <circle cx="904" cy="580" r="13" fill="#111827"/>
+    <circle cx="943" cy="580" r="13" fill="#d9b28c"/>
+    <text x="846" y="632" font-size="13" fill="#101828">Size estimate</text>
+    <rect x="846" y="648" width="72" height="40" fill="#111827"/>
+    <text x="874" y="673" font-size="12" font-weight="700" fill="white">M</text>
+    <rect x="930" y="648" width="72" height="40" fill="#f6f7f4" stroke="#deded8"/>
+    <text x="958" y="673" font-size="12" font-weight="700" fill="#101828">L</text>
+  </g>
+  <rect x="846" y="720" width="246" height="48" fill="#1f5eff"/>
+  <text x="912" y="750" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="white">SAVE OUTFIT</text>
+
+  <text x="72" y="850" font-family="Arial, sans-serif" font-size="13" fill="#777772">Portfolio visualization based on the project’s prototype direction; not an exported production screenshot.</text>
+</svg>
