@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     projects: {
       bcis: "https://github.com/ChristianLoydCesista/prototype",
       expiryApp: "",
-      virtualFitting: "",
+      virtualFitting: "https://github.com/ChristianLoydCesista/fitstyle-3d",
     },
   };
 
@@ -30,25 +30,33 @@ document.addEventListener("DOMContentLoaded", function () {
         <a class="text-link project-link" data-project="expiryApp" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>`;
 
-    projectCards[1].id = "virtual-fitting-room";
+    projectCards[1].id = "fitstyle-3d";
     projectCards[1].innerHTML = `
       <div class="project-card-visual">
-        <img src="assets/img/virtual-fitting-room-ui.svg" alt="Virtual Fitting Room representative interface showing a 3D model, wardrobe controls, fit options, and outfit styling" />
+        <img src="assets/img/virtual-fitting-room-ui.svg" alt="FitStyle 3D representative interface showing a 3D human model, garment preparation, accessory anchors, and fitting controls" />
       </div>
       <div class="project-card-content">
-        <h4>Virtual Fitting Room</h4>
-        <p>An interactive 3D fitting and styling prototype where shoppers can build outfits on a digital body, compare garments and colors, and explore size and fit visualization.</p>
-        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">3D Web</span><span class="tag">GLB / GLTF</span></div>
+        <h4>FitStyle 3D</h4>
+        <p>An interactive 3D virtual fitting and styling prototype built around a rigged human viewer, garment layers, accessory anchors, and future fitted-clothing workflows.</p>
+        <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">Vite</span><span class="tag">GLB / GLTF</span></div>
         <a class="text-link project-link" data-project="virtualFitting" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>`;
   }
 
   document.querySelectorAll("#journey .timeline-item").forEach((item) => {
     const heading = item.querySelector("h4");
-    if (heading && heading.textContent.trim() === "Personal Project Manager") {
+    if (!heading) return;
+
+    if (heading.textContent.trim() === "Personal Project Manager") {
       heading.textContent = "ExpiryApp";
       const copy = item.querySelector("p");
       if (copy) copy.textContent = "Android application · expiry-date scanning, storage, calculations, and notifications";
+    }
+
+    if (heading.textContent.trim() === "3D Virtual Fitting & Styling Prototype") {
+      heading.textContent = "FitStyle 3D";
+      const copy = item.querySelector("p");
+      if (copy) copy.textContent = "Interactive 3D fitting prototype · Three.js human viewer, garment layers, and accessory anchors";
     }
   });
 
