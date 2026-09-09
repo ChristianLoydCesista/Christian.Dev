@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     projects: {
       bcis: "https://github.com/ChristianLoydCesista/prototype",
       expiryApp: "",
-      virtualFitting: "https://github.com/ChristianLoydCesista/fitstyle-3d",
+      virtualFitting: "https://christianloydcesista.github.io/fitstyle-3d/",
     },
   };
 
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <h4>FitStyle 3D</h4>
         <p>An interactive 3D virtual fitting and styling prototype built around a rigged human viewer, garment layers, accessory anchors, and future fitted-clothing workflows.</p>
         <div class="tags"><span class="tag">JavaScript</span><span class="tag">Three.js</span><span class="tag">Vite</span><span class="tag">GLB / GLTF</span></div>
-        <a class="text-link project-link" data-project="virtualFitting" hidden>View project <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="text-link project-link" data-project="virtualFitting" hidden>Live demo <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>`;
   }
 
