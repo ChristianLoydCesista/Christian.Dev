@@ -35,13 +35,15 @@ An Android application that scans expiry dates, stores product records, calculat
 
 **Technologies:** Android, Java, Android Studio
 
-### Virtual Fitting Room
+### FitStyle 3D
 
-An interactive 3D fitting and styling prototype where shoppers can build outfits on a digital body, compare garments and colors, and explore size and fit visualization. The prototype direction includes GLB/GLTF human models and garment/accessory preparation for interactive fitting.
+An interactive 3D virtual fitting and styling prototype built around a Three.js human viewer. The current foundation loads and normalizes `Michelle.glb`, provides orbit and fixed camera views, prepares `TOP`, `DRESS`, and `BOTTOM` garment layers, and creates bone-based accessory anchors for future hats, glasses, jewelry, watches, shoes, and bags.
 
-**Technologies:** JavaScript, Three.js, WebGL, GLB/GLTF
+**Technologies:** JavaScript, Three.js, Vite, WebGL, GLB/GLTF
 
-> The current ExpiryApp and Virtual Fitting Room images on the portfolio are representative UI visualizations based on each project’s implemented or planned feature direction. They are not presented as exported production screenshots.
+**Repository:** https://github.com/ChristianLoydCesista/fitstyle-3d
+
+> The current ExpiryApp and FitStyle 3D images on the portfolio are representative UI visualizations based on each project’s implemented or planned feature direction. They are not presented as exported production screenshots.
 
 ## Technical Stack
 
