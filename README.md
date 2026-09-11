@@ -1,109 +1,62 @@
-# Christian Loyd Cesista — Software Developer Portfolio
+# Christian Loyd Cesista — Junior Software Developer | Web Developer
 
 A responsive personal portfolio website showcasing my software development projects, technical capabilities, development process, and professional journey.
 
-The portfolio uses a clean editorial-style interface with strong typography, generous spacing, responsive layouts, and light/dark themes. It is built as a lightweight static website with no framework or build process required.
+The portfolio uses a clean editorial-style interface with responsive layouts and light/dark themes. It is built as a lightweight static website with no framework or build process required.
 
 ## About the Portfolio
 
-This website presents my work as a software developer focused on building practical applications, information systems, and interactive software for real-world problems.
+This website presents my work as a BS Information Technology graduate focused on practical web applications, database-driven systems, and interactive software for real-world problems.
 
 It highlights:
 
-- Selected software projects
-- Full-stack web development capabilities
-- Android application development
-- Interactive 3D web exploration
-- Backend, database, and frontend technologies
-- My development process
-- Education and project journey
-- Contact and professional links
+- Web-based systems and database-driven workflows
+- PHP, MySQL/MariaDB, JavaScript, HTML, CSS, and Bootstrap development
+- Reporting, analytics, notifications, and role-based administration
+- Interactive 3D web prototyping with Three.js
+- System analysis, testing, documentation, and collaborative development
 
 ## Featured Projects
 
 ### Barangay Community Intelligence System
 
-A community intelligence and citizen-service platform designed to support household information management, administrative workflows, assessments, analytics, document services, and community-level decision support.
+A web-based community intelligence and citizen-service platform supporting household data management, geotagging, assessments, document requests, dashboards, reporting, and role-based administrative workflows.
 
-**Technologies:** PHP, MySQL/MariaDB, JavaScript, AJAX, Bootstrap, Dompdf
+The project includes backend workflows, database integration, role-based administration, PDF document generation, system-process documentation, testing, debugging, and responsive administrative and citizen-facing interfaces.
 
-### ExpiryApp
+**Technologies:** PHP, MySQL/MariaDB, JavaScript, Bootstrap, Dompdf
 
-An Android application that scans expiry dates, stores product records, calculates the remaining time before expiration, and notifies users when saved items are approaching their expiry dates.
+**Repository:** https://github.com/ChristianLoydCesista/prototype
 
-**Core features:** date scanning, expiry-date storage, date calculations, reminder notifications
+### Inventory Monitoring System
 
-**Technologies:** Android, Java, Android Studio
+A database-driven academic application for tracking products and expiration dates to improve inventory visibility and reduce avoidable product loss.
 
-### FitStyle 3D
+The project includes structured product storage, retrieval, monitoring, and expiration notifications.
 
-An interactive 3D virtual fitting and styling prototype built around a Three.js human viewer. The current foundation loads and normalizes `Michelle.glb`, provides orbit and fixed camera views, prepares `TOP`, `DRESS`, and `BOTTOM` garment layers, and creates bone-based accessory anchors for future hats, glasses, jewelry, watches, shoes, and bags.
+**Focus:** Database-driven application, product tracking, expiry monitoring, notifications
 
-**Technologies:** JavaScript, Three.js, Vite, WebGL, GLB/GLTF
+### FitStyle 3D Virtual Fitting Prototype
+
+A browser-based 3D fitting prototype that loads an interactive human model and prepares a modular foundation for garments and accessories.
+
+The project is structured for continued development in VS Code and GitHub, with an emphasis on reusable components and web-based 3D interaction.
+
+**Technologies:** JavaScript, Three.js, GLB/GLTF
+
+**Live demo:** https://christianloydcesista.github.io/fitstyle-3d/
 
 **Repository:** https://github.com/ChristianLoydCesista/fitstyle-3d
 
-> The current ExpiryApp and FitStyle 3D images on the portfolio are representative UI visualizations based on each project’s implemented or planned feature direction. They are not presented as exported production screenshots.
+> Project images in the portfolio are temporary presentation visuals and will be replaced with final project screenshots.
 
-## Technical Stack
+## Technical Skills
 
-### Application Development
-
-- PHP
-- MVC architecture
-- AJAX
-- Authentication and authorization workflows
-- REST-style application workflows
-- Android application development
-
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap
-- Responsive web design
-- Reusable UI components
-
-### Data and Database
-
-- MySQL
-- MariaDB
-- SQL
-- Relational database design
-- Data relationships and structured application data
-
-### Tools and Technologies
-
-- Git
-- GitHub
-- Composer
-- Visual Studio Code
-- Android Studio
-- Dompdf
-- XAMPP
-
-### Currently Exploring
-
-- React
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Three.js
-- Interactive 3D web experiences
-
-## Project Visual Assets
-
-Portfolio-specific project visuals are stored under:
-
-```text
-assets/img/
-├── profile-picture2.png
-├── expiryapp-ui.svg
-└── virtual-fitting-room-ui.svg
-```
-
-The SVG files are lightweight portfolio presentation assets designed to match the visual language of the site while representing the actual project functionality.
+**Programming:** PHP, JavaScript, Java, C#  
+**Web Development:** HTML5, CSS3, Bootstrap, AJAX, responsive UI development, basic Three.js  
+**Database:** MySQL, MariaDB, SQL, database design, CRUD operations  
+**Systems & Analysis:** Requirements analysis, DFD, UML, system design, testing, documentation  
+**Tools:** Git, GitHub, Visual Studio Code, Visual Studio, Android Studio, XAMPP, MS Office
 
 ## Repository Structure
 
@@ -124,12 +77,11 @@ Christian.Dev/
 
 This repository is designed to be deployed as a static site using GitHub Pages or another static hosting provider.
 
-The site does not require a build command or server-side runtime.
-
 ## Author
 
 **Christian Loyd Cesista**  
-Software Developer  
+Junior Software Developer | Web Developer  
+BS Information Technology  
 Eastern Samar State University — Arteche Campus
 
 GitHub: https://github.com/ChristianLoydCesista
