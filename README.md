@@ -16,6 +16,9 @@ It highlights:
 - Interactive 3D web prototyping with Three.js
 - System analysis, testing, documentation, and collaborative development
 
+## Portfolio Website
+https://christianloydcesista.github.io/Christian.Dev
+
 ## Featured Projects
 
 ### Barangay Community Intelligence System
@@ -44,8 +47,6 @@ The project is structured for continued development in VS Code and GitHub, with 
 
 **Technologies:** JavaScript, Three.js, GLB/GLTF
 
-**Live demo:** https://christianloydcesista.github.io/fitstyle-3d/
-
 **Repository:** https://github.com/ChristianLoydCesista/fitstyle-3d
 
 > Project images in the portfolio are temporary presentation visuals and will be replaced with final project screenshots.
@@ -57,6 +58,8 @@ The project is structured for continued development in VS Code and GitHub, with 
 **Database:** MySQL, MariaDB, SQL, database design, CRUD operations  
 **Systems & Analysis:** Requirements analysis, DFD, UML, system design, testing, documentation  
 **Tools:** Git, GitHub, Visual Studio Code, Visual Studio, Android Studio, XAMPP, MS Office
+
+
 
 ## Repository Structure
 
@@ -85,3 +88,5 @@ BS Information Technology
 Eastern Samar State University — Arteche Campus
 
 GitHub: https://github.com/ChristianLoydCesista
+Portfolio Website: https://christianloydcesista.github.io/Christian.Dev
+
