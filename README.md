@@ -16,7 +16,7 @@ It highlights:
 - Interactive 3D web prototyping with Three.js
 - System analysis, testing, documentation, and collaborative development
 
-## Portfolio Website
+## Portfolio Link
 https://christianloydcesista.github.io/Christian.Dev
 
 ## Featured Projects
